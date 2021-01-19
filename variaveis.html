@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variáveis </title>
+</head>
+
+<body style="text-align: center;">
+    <h1>Curso de JavaScript</h1>
+    <p>Configurando ambiente</p>
+    <iframe width="424" height="238" style="max-width: 100%;" src="https://www.youtube.com/embed/e4MpdyIouzQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <hr>
+    <a href="https://www.youtube.com/channel/UCd4MhWhSeqK1Ga4OKOPSxSw">Inscreva-se</a>
+    <div>Para abrir o console aperte botão direito do mause + inspecionar </div>
+    <div>Depois clique no console </div>
+    <div style="display: flex; justify-content: center;">
+        <img style="max-width: 100%;" src="/Capturar.PNG" alt="">
+    </div>
+
+    <!--Div que vamos chamar pelo id para salvar em uma variáve -->
+    <div id="div">ola</div>
+
+
+
+
+
+
+    <script>
+        //Comentario de unica linha
+
+        /*
+        Comentario de Multiplaslinhas
+        */
+
+        // Existem três tipos de declarações em JavaScript.
+        // var
+        // Declara uma variável, opcionalmente, inicializando - a com um valor.
+        //let
+        // Declara uma variável local de escopo do bloco, opcionalmente, inicializando - a com um valor.
+        //const
+        // Declara uma constante de escopo de bloco, apenas de leitura.
+
+
+        //sintaxe
+
+        /* var let ou const 
+        +
+        nome da variável 
+        +
+         atribui um valor a ele com = 'recebe'
+         +
+        valor atribuído a ela maiso sinal ; pra finalizar a sentença
+         */
+
+
+        //JavaScript é case-sensitive     
+
+        /*
+        Case-sensitive é um anglicismo que se refere a um tipo de análise tipográfica da informática.
+         Em língua portuguesa, significa algo como "sensível à caixa das letras" ou "sensível a maiúsculas e minúsculas"
+        */
+
+
+
+        var ola = 'oi'; //variável com letras minusculas
+        var Ola = 'Tchau' //variável com 1 letra maiuscula
+        var OLA = 'Até' //variável com todas as letras maiusculas
+        console.log(ola);
+        console.log(Ola);
+        console.log(OLA)
+
+
+
+        var varVazia = '';
+        let letVazia = '';
+        console.log(varVazia);
+        console.log(letVazia);
+        console.log(typeof(varVazia));
+        console.log(typeof(letVazia));
+
+
+        //você pode mudar o valor das variáveis mesmo que elas já tenham um valor,
+        // e mudar o tipo de dado nela
+
+        //Mudando o que esta escrito 
+        varVazia = 'Adicionado uma string a var';
+        letVazia = 'Adicionado uma string a let';
+        console.log(varVazia);
+        console.log(letVazia);
+
+
+        //mudando tipo de dado de string para numero 
+
+        varVazia = 1;
+        letVazia = 2;
+        console.log(varVazia);
+        console.log(letVazia);
+        console.log(typeof(varVazia));
+        console.log(typeof(letVazia));
+
+
+
+        //Tipos de dados diferentes que podem ser salvos nas variáveis 
+
+
+
+        //conteudo do html
+        var conteudoDaDivNaVar = document.getElementById('div').innerHTML;
+        let conteudoDaDivNalet = document.getElementById('div').innerHTML;
+
+        console.log(conteudoDaDivNaVar);
+        console.log(conteudoDaDivNalet);
+
+        console.log(typeof(conteudoDaDivNaVar))
+        console.log(typeof(conteudoDaDivNaLet))
+
+        //o próprio elemento html
+        conteudoDaDivNaVar = document.getElementById('div');
+        conteudoDaDivNalet = document.getElementById('div');
+        console.log(conteudoDaDivNaVar);
+        console.log(conteudoDaDivNalet);
+        console.log(typeof(conteudoDaDivNaVar))
+        console.log(typeof(conteudoDaDivNaLet))
+
+
+        // Um aray
+        var varAray = [];
+        let letAray = [];
+
+        console.log(varAray)
+        console.log(letAray)
+            //verificando o tipo
+        console.log(typeof(varAray))
+        console.log(typeof(letAray))
+
+        //Um obijet
+        var varObj = {};
+        let letObj = {};
+        console.log(varObj)
+        console.log(letObj)
+            //verificando o tipo
+        console.log(typeof(varObj))
+        console.log(typeof(letObj))
+
+        //Numeros
+        var varNun = 1;
+        let letNun = 2;
+        console.log(varNun)
+        console.log(letNun)
+            //verificando o tipo
+        console.log(typeof(varNun))
+        console.log(typeof(letNun))
+            //string 'uma cadeia de caracteres ou string é uma sequência de caracteres'
+        var varStr = 'oi';
+        let letStr = 'tchau';
+
+        console.log(varStr)
+        console.log(letStr)
+            //verificando o tipo
+        console.log(typeof(varStr))
+        console.log(typeof(letStr))
+
+
+
+        //variáveis e escopos
+
+
+        /*
+        As variáveis que são declaradas fora de funções ficam no escopo 
+        global, podendo ser acessados em qualquer escopo 'dentro das variáveis' 
+         */
+        var varOlaGlobal = 'var';
+        let letOlaGlobal = 'let';
+        const constOlaGlobal = 'const';
+
+        console.log(varOlaGlobal);
+        console.log(letOlaGlobal);
+        console.log(constOlaGlobal);
+
+
+
+        function teste() {
+            console.log('função 1');
+            //imprimindo variáveis globais 
+            console.log(varOlaGlobal);
+            console.log(letOlaGlobal);
+            console.log(constOlaGlobal);
+            //criando variáveis no escopo local
+            var varOlaLocal = 'var local';
+            let letOlaLocal = 'let local';
+            const constOlaLocal = 'const local';
+            //Imprimindo variáveis no escopo local
+            console.log(varOlaLocal);
+            console.log(letOlaLocal);
+            console.log(constOlaLocal);
+        };
+        teste();
+
+        function teste2() {
+            console.log('função 2');
+            //imprimindo variáveis globais 
+            console.log(varOlaGlobal);
+            console.log(letOlaGlobal);
+            console.log(constOlaGlobal);
+            //Imprimindo variáveis no escopo local da funçao a cima(descomece e veja que não é possível acessar o escopo da outra função)
+
+            // console.log(varOlaLocal);
+            // console.log(letOlaLocal);
+            // console.log(constOlaLocal);
+        };
+        teste2();
+
+        function teste3() {
+            //Criando vaiavel so para comparar no if e entrar na condição do if 
+            var um = 1;
+            // comparando 1 com 1 entra no nosso if 
+            if (um = 1) {
+                var varIf = 'local var';
+                console.log(varIf);
+
+                let letIf = 'local let';
+                console.log(letIf);
+            }
+            //É possível acessar a variável declarada com var dentro do if
+            console.log(varIf);
+            //Não é possível acessar a variável declarada com let dentro do if ( descomente e teste)
+            // console.log(letIf);
+
+
+        }
+        teste3();
+        //Não é possível acessar as variável declarada dentro do if fora da função ( descomente e teste)
+        //console.log(varIf);
+        // console.log(letIf);
+
+
+
+
+
+
+
+
+
+        /*
+         semana que vem agt vai falar sobre tipos de dados em js  
+         */
+    </script>
+</body>
+
+</html>
